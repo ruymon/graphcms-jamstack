@@ -1,6 +1,9 @@
 import { Provider } from 'urql';
 import { client, ssrCache } from '../lib/urql';
 
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -15,7 +18,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider value={client}>
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </Provider>
   );
 }
